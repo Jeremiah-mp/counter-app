@@ -4,20 +4,28 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/style.css" id="myStyleSheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital@0;1&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="./images/favicon (6).ico" type="image/x-icon">
-    <title>Counter App.</title>
+    <title>counter app</title>
 </head>
 <body>
     
-    <div class="main-content">
+    <div id="main-content">
 
         <div class="top-content">
+            <div class="change-bg-setting">
+                <button onclick = "viewSetting();" id = "setting"><img id = "app-settings" src="./images/setting.png"  alt="change-settings"></button>
+            </div>
+
             <div class="reset-counter">
-                <button onclick = "reset();" id="reset-counter"><img id = "reset-counter" src="./images/rotate-left-circular-arrow-interface-symbol (1).png" alt="reset-counter"></button>
+                <button onclick = "resetNumber();" id="reset-counter"><img id = "reset" src="./images/rotate-left-circular-arrow-interface-symbol (1).png" alt="reset-counter-value"></button>
+            </div>
+
+            <div class="change-theme">
+                <button onclick = "changeTheme();" id="change-theme-button"><img id = "theme" src="./images/paint-roller (3).png" alt="change-theme"></button>
             </div>
         </div>
 
@@ -25,7 +33,7 @@
         <div class="bottom-content">
 
             <div class="decrease">
-                <button onclick = "decrease();" id="decrease-counter"><img id = "decrease" src="./images/remove.png" alt="decrease-counter"></button>
+                <button onclick = "decrease();" id="decrease-counter"><img id = "decrease" src="./images/minus (5).png" alt="decrease-counter"></button>
             </div>
     
             <div class="number-display">
@@ -33,9 +41,44 @@
             </div>
     
             <div class="increase">
-                <button onclick = "increase();" id="increase-counter"><img id = "increase" src="./images/add (3).png" alt="increase-counter"></button>
+                <button onclick = "increase();" id="increase-counter"><img id = "increase" src="./images/add (4).png" alt="increase-counter"></button>
             </div>
     
+        </div>
+    </div>
+
+    
+    <div id = "reset-counter-div">
+
+        <h3 id="reset-text">reset counter?</h3>
+        <button onclick = "yesReset();" id = "yes">yes</button>
+        <button onclick = "cancelReset();" id = "cancel">cancel</button>
+    </div>
+
+    <div id="counter-settings">
+        <h3>settings</h3>
+
+        <div class="set-count">
+            <p>set count = </p>
+            <input type="number" id="set-count">
+        </div>
+
+        <!-- <div class="set-count-limit">
+            <div class="on-off-limit">
+                <p>limit</p>
+                <div class="on-off">
+                    <button onclick="limitOnOff();" id="on-off">off</button>
+                    <p id = "button-state">on</p>
+                </div>
+            </div>
+            <div class="set-maximum">
+                <p id = "set-max-text">maximum = </p>
+                <input type="number" id="set-max-number">
+            </div>
+        </div> -->
+
+        <div class="exit">
+            <button onclick = "exitSettings();" id="exit-settings"><img id="exit" src="./images/reject.png" alt="exit-button"></button>
         </div>
     </div>
 
