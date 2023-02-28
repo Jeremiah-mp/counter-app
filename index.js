@@ -14,6 +14,7 @@ const maxNumber = document.getElementById("set-max-number")
 let newNumber = parseInt(number.textContent)
 let currentValue;
 
+setCount.value = 0
 //Counter Actions
 function resetNumber(){
     document.getElementById("main-content").style.display = "none"
@@ -49,12 +50,17 @@ function cancelReset(){
 function exitSettings(){
     document.getElementById("main-content").style.display = "block"
     document.getElementById("counter-settings").style.display = "none"
-    currentValue = parseInt(setCount.value)
-    newNumber = 0
-    newNumber = newNumber + currentValue
-    number.textContent = newNumber
-    console.log(newNumber)
-    console.log(currentValue)
+    if(setCount.value == 0){
+        number.textContent != setCount.value
+    }else{
+        currentValue = parseInt(setCount.value)
+        newNumber = 0
+        newNumber = newNumber + currentValue
+        number.textContent = newNumber
+        console.log(newNumber)
+        console.log(currentValue)
+    }
+
 }
 
 function viewSetting(){
